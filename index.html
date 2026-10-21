@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://images.unsplash.com https://media3.giphy.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://images.unsplash.com https://i.giphy.com https://media.giphy.com;">
     <title>Victor Hugo | Full Stack Developer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,17 +53,18 @@
             box-shadow: 0 10px 20px -10px #0ea5e9;
         }
 
-        /* Anime Background Overlay */
+        /* Anime Background Fix */
         .anime-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
-            background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGRvNjJsZ3h5NHJkd2JsN283b2pqM29pMnU4enpjeGtwNTM2ZWg3aSZlcD12MV9pbnRlcm5hbF9naWZfYnl_aWQmY3Q9Zw/w1QDElFT0lsry2uduF/giphy.gif');
+            background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGRvNjJsZ3h5NHJkd2JsN283b2pqM29pMnU4enpjeGtwNTM2ZWg3aSZlcD12MV9pbnRlcm5hbF9naWZfYnl_aWQmY3Q9Zw/w1QDElFT0lsry2uduF/giphy.gif');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.3) grayscale(0.2);
-            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            background-repeat: no-repeat;
+            filter: brightness(0.4) contrast(1.1);
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
         }
 
         /* Custom Scrollbar */
@@ -92,7 +93,7 @@
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
                 <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
                 <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
+                <a href="#projetos" class="hover:text-white transition-//-colors">Projetos</a>
                 <a href="#contato" class="text-sky-400 hover:text-sky-300 transition-colors">Contato</a>
             </div>
             <div class="md:hidden text-slate-400 cursor-pointer"><i class="fas fa-bars"></i></div>
@@ -110,10 +111,10 @@
             <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight" data-aos="fade-up">
                 <span class="text-slate-100">Olá, eu sou o</span> <br><span class="text-gradient">Victor Hugo</span>
             </h1>
-            <div class="h-8 mb-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-8 mb-10" data-aos="fade-up" data-//-delay="100">
                 <p id="typewriter" class="text-xl md:text-2xl font-mono text-slate-400"></p>
             </div>
-            <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-//-delay="200">
+            <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
                 <a href="#projetos" class="px-8 py-4 btn-primary text-white rounded-xl font-bold text-lg flex items-center justify-center">
                     Ver Projetos <i class="fas fa-arrow-right ml-2 text-sm"></i>
                 </a>
@@ -125,7 +126,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="py-24 px-4 relative z-10 bg-slate-950/50">
+    <section id="sobre" class="py-24 px-4 relative z-10 bg-slate-950/80">
         <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
                 <h2 class="text-3xl font-bold mb-6 flex items-center">
@@ -185,7 +186,7 @@
                 </div>
                 <div class="glass-card p-8 rounded-2xl hover-scale group" data-aos="zoom-in" data-aos-delay="400">
                     <div class="text-5xl mb-4 text-orange-500 group-hover:scale-110 transition-transform"><i class="fas fa-cloud"></i></div>
-                    <h4 class="font-bold">Cloudflare</h4>
+                    <h4 class="//-bold">Cloudflare</h4>
                 </div>
             </div>
         </div>
@@ -316,4 +317,3 @@
     </script>
 </body>
 </html>
-<!-- Force Update Wed Oct 21 04:47:02     2026 -->
