@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEGURANÇA AVANÇADA: CSP e Proteções -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://via.placeholder.com;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <title>Banana Gold | A Experiência Suprema da Fruta</title>
+
+    <!-- PERFORMANCE: Preconnect e Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #eab308;
+            --primary-dark: #ca8a04;
+            --accent: #166534;
+        }
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
+
+        .banana-gradient {
+            background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #ca8a04, #854d0e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hover-scale { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hover-scale:hover { transform: scale(1.05); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px) rotate(3deg); } 50% { transform: translateY(-30px) rotate(1deg); } 100% { transform: translateY(0px) rotate(3deg); } }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-orange-50 text-slate-900 antialiased">
+
+    <!-- BANNER DE URGÊNCIA COM ANIMAÇÃO -->
+    <div class="bg-yellow-600 text-white text-center py-2 text-xs md:text-sm font-bold uppercase tracking-widest overflow-hidden whitespace-nowrap">
+        <div class="inline-block animate-marquee">
+            🚀 Lote de Colheita Limitado: Apenas 42 cestas disponíveis para esta semana! • Entrega prioritária para pedidos agora! • A Banana mais pura do Brasil! • 🚀 Lote de Colheita Limitado: Apenas 42 cestas disponíveis para esta semana!
+        </div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-yellow-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="text-2xl md:text-3xl font-black text-gradient tracking-tighter flex items-center">
+                    <i class="fas fa-leaf text-green-600 mr-2"></i>BANANA GOLD
+                </div>
+                <div class="hidden md:flex space-x-8 font-bold text-slate-700 items-center">
+                    <a href="#inicio" class="hover:text-yellow-600 transition-all">Início</a>
+                    <a href="#qualidade" class="hover:text-yellow-600 transition-all">Qualidade</a>
+                    <a href="#planos" class="hover:text-yellow-600 transition-all">Assinatura</a>
+                    <a href="#faq" class="hover:text-yellow-600 transition-all">Dúvidas</a>
+                    <a href="#contato" class="bg-yellow-400 text-yellow-900 px-6 py-2 rounded-full hover:bg-yellow-500 transition shadow-md">Pedir Agora</a>
+                </div>
+                <div class="md:hidden text-2xl">
+                    <i class="fas fa-bars cursor-pointer" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"></i>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-yellow-200 p-4 space-y-4 text-center font-bold">
+            <a href="#inicio" class="block py-2">Início</a>
+            <a href="#qualidade" class="block py-2">Qualidade</a>
+            <a href="#planos" class="block py-2">Assinatura</a>
+            <a href="#contato" class="block py-2 text-yellow-600">Pedir Agora</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-left" data-aos="fade-right">
+                <span class="inline-block px-4 py-1 bg-yellow-200 text-yellow-800 rounded-full text-xs font-bold mb-4 uppercase tracking-widest">💎 Qualidade Diamond</span>
+                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none text-slate-900">
+                    A Banana <br><span class="text-gradient">Mais Pura</span> <br>do Planeta.
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 leading-relaxed">
+                    Não é apenas uma fruta. É uma obra-prima da natureza. Colhidas no ápice da maturação solar para entregar a doçura perfeita e a energia vital que você merece.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contato" class="px-10 py-5 banana-gradient text-yellow-900 rounded-full font-black text-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 text-center">
+                        Garantir Minhas Bananas <i class="fas fa-shopping-basket ml-2"></i>
+                    </a>
+                    <a href="#qualidade" class="px-10 py-5 bg-white text-slate-700 border-2 border-yellow-400 rounded-full font-bold text-xl hover:bg-yellow-50 transition-all text-center">
+                        Descobrir o Segredo
+                    </a>
+                </div>
+            </div>
+            <div class="relative" data-aos="zoom-in">
+                <div class="absolute -inset-4 bg-yellow-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                <img src="https://images.unsplash.com/photo-1528825871115-35557be2e86f?auto=format&fit=crop&q=80&w=800"
+                     alt="Bananas Premium"
+                     loading="lazy"
+                     class="relative rounded-3xl shadow-2xl border-8 border-white transform rotate-3 hover:rotate-0 transition-all duration-700 animate-float">
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualidade Section -->
+    <section id="qualidade" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-black mb-4">O Padrão <span class="text-yellow-500">Ouro</span> da Fruta</h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto">A ciência da natureza unida à nossa paixão por perfeição.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-10 rounded-3xl bg-orange-50 hover:bg-yellow-50 transition-all hover-scale border border-yellow-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-yellow-400 text-yellow-900 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-yellow-200">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Maturação Solar</h3>
+                    <p class="text-slate-600 leading-relaxed">Processo natural de amadurecimento sob o sol tropical, resultando em açúcares naturais e sabor intenso.</p>
+                </div>
+
+                <div class="p-10 rounded-3xl bg-orange-50 hover:bg-yellow-50 transition-all hover-scale border border-yellow-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-green-500 text-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-green-200">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">100% Orgânica</h3>
+                    <p class="text-slate-600 leading-relaxed">Cultivo regenerativo sem agrotóxicos. Respeitamos a terra para que ela nos dê o melhor fruto.</p>
+                </div>
+
+                <div class="p-10 rounded-3xl bg-orange-50 hover:bg-yellow-50 transition-all hover-scale border border-yellow-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-yellow-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-yellow-200">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Entrega Flash</h3>
+                    <p class="text-slate-600 leading-relaxed">Logística inteligente e climatizada. Da nossa fazenda para sua mesa em tempo recorde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-24 bg-orange-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-black mb-16" data-aos="fade-up">Quem provou, <span class="text-yellow-600">viciou</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm italic text-slate-600 relative" data-aos="flip-left">
+                    <i class="fas fa-quote-left text-yellow-200 text-5xl absolute top-4 left-4"></i>
+                    <p class="relative z-10">"Nunca imaginei que uma banana pudesse ter esse sabor. É surreal, parece um doce natural!"</p>
+                    <p class="mt-6 font-bold text-slate-900 not-italic">— Ricardo M., Nutricionista</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm italic text-slate-600 relative" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fas fa-quote-left text-yellow-200 text-5xl absolute top-4 left-4"></i>
+                    <p class="relative z-10">"O clube de assinatura é a melhor coisa que fiz. Acordar e ter a banana perfeita todo dia é luxo."</p>
+                    <p class="mt-6 font-bold text-slate-900 not-italic">— Juliana S., Atleta</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm italic text-slate-600 relative" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fas fa-quote-left text-yellow-200 text-5xl absolute top-4 left-4"></i>
+                    <p class="relative z-10">"Chegou super rápido e muito bem embalada. A qualidade é realmente superior a tudo que já vi."</p>
+                    <p class="mt-6 font-bold text-slate-900 not-italic">— Marcos T., Gourmet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Section -->
+    <section id="planos" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20" data-aos="fade-down">
+                <h2 class="text-4xl md:text-6xl font-black mb-4">Clube da <span class="text-yellow-400">Banana Gold</span></h2>
+                <p class="text-slate-400 text-lg">Nunca mais fique sem a sua dose diária de energia.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-slate-800 border border-slate-700 hover:border-yellow-400 transition-all hover-scale" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-2">Degustação</h3>
+                    <div class="text-4xl font-black mb-6">R$ 29<span class="text-lg font-normal text-slate-400">/mês</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-300">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-400 mr-2"></i> 1 Cacho Premium / Semana</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-400 mr-2"></i> Entrega Grátis</li>
+                        <li class="flex items-center opacity-50"><i class="fas fa-times text-red-400 mr-2"></i> Suporte VIP</li>
+                    </ul>
+                    <a href="#contato" class="block text-center py-4 rounded-xl bg-slate-700 font-bold hover:bg-slate-600 transition">Assinar Agora</a>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-yellow-400 text-yellow-900 transform scale-110 shadow-2xl relative" data-aos="zoom-in">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-600 text-white px-4 py-1 rounded-full text-sm font-black uppercase">Mais Popular</div>
+                    <h3 class="text-2xl font-bold mb-2">Gold Experience</h3>
+                    <div class="text-4xl font-black mb-6">R$ 59<span class="text-lg font-normal text-yellow-700">/mês</span></div>
+                    <ul class="space-y-4 mb-10 font-medium">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-700 mr-2"></i> 3 Cachos Premium / Semana</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-700 mr-2"></i> Entrega Prioritária</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-700 mr-2"></i> Guia de Receitas Gourmet</li>
+                    </ul>
+                    <a href="#contato" class="block text-center py-4 rounded-xl bg-yellow-900 text-white font-bold hover:bg-black transition">Quero a Experiência Gold</a>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-800 border border-slate-700 hover:border-yellow-400 transition-all hover-scale" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-2">Platinum Harvest</h3>
+                    <div class="text-4xl font-black mb-6">R$ 99<span class="text-lg font-normal text-slate-400">/mês</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-300">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-400 mr-2"></i> 6 Cachos Premium / Semana</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-400 mr-2"></i> Kit de Conservação</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-400 mr-2"></i> Consultoria Nutricional</li>
+                    </ul>
+                    <a href="#contato" class="block text-center py-4 rounded-xl bg-slate-700 font-bold hover:bg-slate-600 transition">Assinar Platinum</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-4xl font-black text-center mb-12" data-aos="fade-up">Dúvidas Frequentes</h2>
+            <div class="space-y-6">
+                <div class="p-6 rounded-2xl bg-orange-50 border border-yellow-100 hover:border-yellow-400 transition-all cursor-pointer group" data-aos="fade-up">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg mb-2 group-hover:text-yellow-600 transition">Como é feita a entrega?</h4>
+                        <i class="fas fa-chevron-down transition-transform group-hover:rotate-180"></i>
+                    </div>
+                    <p class="text-slate-600">Utilizamos caixas térmicas biodegradáveis para garantir que a temperatura da fruta seja mantida do pomar até a sua mesa.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-orange-50 border border-yellow-100 hover:border-yellow-400 transition-all cursor-pointer group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg mb-2 group-hover:text-yellow-600 transition">Posso cancelar a assinatura?</h4>
+                        <i class="fas fa-chevron-down transition-transform group-hover:rotate-180"></i>
+                    </div>
+                    <p class="text-slate-600">Sim! Não temos fidelidade. Você pode pausar ou cancelar sua assinatura com apenas um clique.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-orange-50 border border-yellow-100 hover:border-yellow-400 transition-all cursor-pointer group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg mb-2 group-hover:text-yellow-600 transition">As bananas são realmente orgânicas?</h4>
+                        <i class="fas fa-chevron-down transition-transform group-hover:rotate-180"></i>
+                    </div>
+                    <p class="text-slate-600">Sim, possuímos certificação orgânica rigorosa e você pode conferir a origem de cada lote via QR Code na embalagem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contato" class="py-24 bg-yellow-400 text-yellow-900 text-center px-4">
+        <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+            <h2 class="text-5xl font-black mb-6">Sinta o Sabor do Ouro</h2>
+            <p class="text-xl mb-12 font-medium opacity-80">Não aceite bananas comuns. Eleve seu café da manhã ao nível Platinum.</p>
+            <a href="https://wa.me/5518988242732" target="_blank" rel="noopener noreferrer" class="px-12 py-6 bg-green-600 text-white rounded-full font-black text-2xl hover:bg-green-700 transition-all shadow-2xl transform hover:scale-110 inline-block">
+                <i class="fab fa-whatsapp mr-3"></i> Pedir no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t border-yellow-100 text-center text-slate-400">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-2xl font-black text-gradient mb-4">BANANA GOLD</div>
+            <p>&copy; 2023 Banana Gold Premium. Colhida com amor, entregue com perfeição.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Performance e Animação -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</body>
+</html>
