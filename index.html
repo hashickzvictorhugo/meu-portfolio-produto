@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Produto | Soluções Inovadoras</title>
+    <!-- Tailwind CSS para design moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="text-2xl font-bold gradient-text">MEU PRODUTO</div>
+                <div class="hidden md:flex space-x-8 font-medium">
+                    <a href="#inicio" class="hover:text-indigo-600 transition">Início</a>
+                    <a href="#features" class="hover:text-indigo-600 transition">Funcionalidades</a>
+                    <a href="#sobre" class="hover:text-indigo-600 transition">Sobre</a>
+                    <a href="#contato" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Comprar Agora</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                O produto que vai <br><span class="gradient-text">transformar seu dia a dia</span>
+            </h1>
+            <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
+                Uma solução inovadora criada para resolver seus problemas com eficiência e estilo. Descubra como podemos ajudar você a alcançar seus objetivos.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contato" class="px-8 py-4 bg-indigo-600 text-white rounded-full font-bold text-lg hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all transform hover:-translate-y-1">
+                    Começar Agora <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#features" class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all">
+                    Saiba Mais
+                </a>
+            </div>
+            <!-- Imagem do Produto -->
+            <div class="mt-16 relative max-w-5xl mx-auto">
+                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-20"></div>
+                <img src="https://via.placeholder.com/1200x600" alt="Produto" class="relative rounded-2xl shadow-2xl border border-slate-200">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16">Por que escolher o <span class="text-indigo-600">Nosso Produto</span>?</h2>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Alta Performance</h3>
+                    <p class="text-slate-600">Desenvolvido com as tecnologias mais recentes para garantir velocidade e eficiência máxima.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Segurança Total</h3>
+                    <p class="text-slate-600">Sua tranquilidade é nossa prioridade. Implementamos os mais rigorosos padrões de segurança.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Experiência Única</h3>
+                    <p class="text-slate-600">Interface intuitiva e design focado no usuário para que você não perca tempo aprendendo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Final -->
+    <section id="contato" class="py-20 bg-indigo-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6">Pronto para elevar o seu nível?</h2>
+            <p class="text-indigo-200 mb-10 text-lg">Junte-se a centenas de clientes satisfeitos e transforme seus resultados hoje mesmo.</p>
+            <a href="https://wa.me/SEUNUMERO" target="_blank" class="px-10 py-5 bg-green-500 text-white rounded-full font-bold text-xl hover:bg-green-600 transition-all shadow-lg shadow-green-900/50">
+                <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-slate-200 bg-white text-center text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2023 Meu Produto. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
