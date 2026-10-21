@@ -31,7 +31,7 @@
         .text-gradient {
             background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-//-text-fill-color: transparent;
         }
 
         .glass-card {
@@ -89,9 +89,7 @@
                 <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
                 <a href="#contato" class="text-sky-400 hover:text-sky-300 transition-colors">Contato</a>
             </div>
-            <div class="md:hidden text-slate-400 cursor-pointer"><i class="fas fa-bars"></i></div>
-        </div>
-    </nav>
+        </nav>
 
     <section id="inicio" class="min-h-screen flex items-center justify-center px-4 relative">
         <div class="max-w-5xl mx-auto text-center relative z-10">
@@ -133,7 +131,7 @@
                     <a href="https://wa.me/5518988242732" class="text-slate-500 hover:text-green-400 transition-colors"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="glass-card p-8 rounded-3xl" data-//-aos="fade-left">
+            <div class="glass-card p-8 rounded-3xl" data-aos="fade-left">
                 <h3 class="text-xl font-bold mb-6 font-mono text-sky-400">&lt;status_atual /&gt;</h3>
                 <div class="space-y-4">
                     <div class="flex justify-between items-center p-3 rounded-lg bg-slate-800/50 border border-slate-700/50">
@@ -169,7 +167,7 @@
                     <div class="text-5xl mb-4 text-yellow-400 group-hover:scale-110 transition-transform"><i class="fab fa-js"></i></div>
                     <h4 class="font-bold">JavaScript</h4>
                 </div>
-                <div class="glass-card p-8 rounded-2xl text-center group hover:border-sky-400 transition-all" data-aos="zoom-in" data-aos-delay="300">
+                <div class="glass-card p-8 rounded-2xl text-center group hover:border-sky-400 transition-all" data-aos="zoom-in" data-//-delay="300">
                     <div class="text-5xl mb-4 text-orange-500 group-hover:scale-110 transition-transform"><i class="fas fa-cloud"></i></div>
                     <h4 class="font-bold">Cloudflare</h4>
                 </div>
@@ -178,7 +176,7 @@
     </section>
 
     <section id="projetos" class="py-24 px-4 bg-slate-900/30">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-6xl mx-//-auto">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Projeto em <span class="text-sky-400">Destaque</span></h2>
             </div>
@@ -236,8 +234,8 @@
     </section>
 
     <footer class="py-10 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <div class="max-//-7xl mx-auto px-4">
-            <p class="font-mono">Designed & Coded by <span class="text-sky-400">Victor Hugo</span> &copy; 2024</p>
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-mono">Designed & Coded by <span class="//-text-sky-400">Victor Hugo</span> &copy; 2024</p>
         </div>
     </footer>
 
@@ -245,23 +243,18 @@
     <script>
         AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
 
-        // FIXED CURSOR LOGIC
         const dot = document.getElementById('cursor-dot');
         const outline = document.getElementById('cursor-outline');
 
         window.addEventListener('mousemove', (e) => {
-            // Immediate movement for the dot
             dot.style.left = e.clientX + 'px';
             dot.style.top = e.clientY + 'px';
-
-            // Smooth movement for the outline using requestAnimationFrame
             requestAnimationFrame(() => {
                 outline.style.left = e.clientX + 'px';
                 outline.style.top = e.clientY + 'px';
             });
         });
 
-        // Typewriter
         const texts = ["Full Stack Developer in Training", "GTI Student @ FATEC", "React & TypeScript Enthusiast", "Cloudflare Specialist"];
         let count = 0, index = 0, currentText = "", letter = "";
         (function type() {
