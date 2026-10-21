@@ -2,9 +2,13 @@
 <html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://images.unsplash.com https://i.giphy.com https://media.giphy.com;">
-    <title>Victor Hugo | Full Stack Developer</title>
+    <meta name="viewport" content="width=device-//-width, initial-scale=1.0">
+
+    <!-- SEGURANÇA: CSP Rígida para evitar XSS e Injeções -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://images.unsplash.com;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <title>Victor Hugo | Full Stack Engineer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,15 +20,29 @@
     <style>
         :root {
             --bg-dark: #020617;
-            --card-bg: #0f172a;
-            --accent: #38bdf8;
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-dark);
             color: #f8fafc;
+            overflow-x: hidden;
+            cursor: none; /* Esconde o cursor padrão */
         }
         .font-mono { font-family: 'Fira Code', monospace; }
+
+        /* Custom Cursor Elements */
+        #cursor-dot {
+            width: 8px; height: 8px; background-color: var(--accent-blue);
+            position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+        #cursor-outline {
+            width: 40px; height: 40px; border: 2px solid var(--accent-blue);
+            position: fixed; border-radius: 50%; pointer-events: none; z-index: 9998;
+            transition: all 0.15s ease-out;
+        }
 
         .text-gradient {
             background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
@@ -32,15 +50,19 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .glass-card {
+        /* Bento Grid Glassmorphism */
+        .bento-card {
             background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
-        .glass-card:hover {
+        .bento-card:hover {
             border-color: rgba(56, 189, 248, 0.4);
-            background: rgba(15, 23, 42, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.2);
         }
 
         .btn-primary {
@@ -53,36 +75,29 @@
             box-shadow: 0 10px 20px -10px #0ea5e9;
         }
 
-        /* Anime Background Fix */
-        .anime-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+        /* Background Glows */
+        .bg-glow {
+            position: fixed;
+            width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
             z-index: -1;
-            background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGRvNjJsZ3h5NHJkd2JsN283b2pqM29pMnU4enpjeGtwNTM2ZWg3aSZlcD12MV9pbnRlcm5hbF9naWZfYnl_aWQmY3Q9Zw/w1QDElFT0lsry2uduF/giphy.gif');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: brightness(0.4) contrast(1.1);
-            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            pointer-events: none;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #334155; }
-
-        .scheduling-mockup {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
     </style>
 </head>
 <body class="antialiased">
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- Ambient Glows -->
+    <div class="bg-glow top-[-10%] left-[-10%]"></div>
+    <div class="bg-glow bottom-[-10%] right-[-10%]"></div>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 px-6 py-4">
@@ -93,16 +108,14 @@
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
                 <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
                 <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                <a href="#projetos" class="hover:text-white transition-//-colors">Projetos</a>
+                <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
                 <a href="#contato" class="text-sky-400 hover:text-sky-300 transition-colors">Contato</a>
             </div>
             <div class="md:hidden text-slate-400 cursor-pointer"><i class="fas fa-bars"></i></div>
         </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-        <div class="anime-bg"></div>
-
+    <section id="inicio" class="min-h-screen flex items-center justify-center px-4 relative">
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <div class="mb-8 relative inline-block" data-aos="zoom-in">
                 <img src="https://avatars.githubusercontent.com/u/169914953?v=4"
@@ -111,10 +124,10 @@
             <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight" data-aos="fade-up">
                 <span class="text-slate-100">Olá, eu sou o</span> <br><span class="text-gradient">Victor Hugo</span>
             </h1>
-            <div class="h-8 mb-10" data-aos="fade-up" data-//-delay="100">
+            <div class="h-8 mb-10" data-aos="fade-up" data-aos-delay="100">
                 <p id="typewriter" class="text-xl md:text-2xl font-mono text-slate-400"></p>
             </div>
-            <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-//-delay="200">
                 <a href="#projetos" class="px-8 py-4 btn-primary text-white rounded-xl font-bold text-lg flex items-center justify-center">
                     Ver Projetos <i class="fas fa-arrow-right ml-2 text-sm"></i>
                 </a>
@@ -126,7 +139,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="py-24 px-4 relative z-10 bg-slate-950/80">
+    <section id="sobre" class="py-24 px-4">
         <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
                 <h2 class="text-3xl font-bold mb-6 flex items-center">
@@ -136,7 +149,7 @@
                     Estudante de <span class="text-white font-semibold">GTI na FATEC</span>, focado em construir aplicações escaláveis e interfaces modernas.
                 </p>
                 <p class="text-slate-400 leading-relaxed mb-6">
-                    Especializando-me no ecossistema Full Stack com foco em <span class="text-sky-400">React, TypeScript e Cloudflare</span>. Busco sempre a eficiência do código e a melhor experiência para o usuário final.
+                    Especializando-me no ecossistema Full Stack com foco em <span class="text-sky-400">React, TypeScript e Cloudflare</span>.
                 </p>
                 <div class="flex gap-4 text-2xl">
                     <a href="#" class="text-slate-500 hover:text-sky-400 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -154,10 +167,6 @@
                         <span class="text-slate-500 text-sm">Foco</span>
                         <span class="font-semibold text-sm">Full Stack Dev</span>
                     </div>
-                    <div class="flex justify-between items-center p-3 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                        <span class="text-slate-500 text-sm">Local</span>
-                        <span class="font-semibold text-sm">Assis, SP</span>
-                    </div>
                     <div class="flex justify-between items-center p-3 rounded-lg bg-green-500/10 border border-green-500/20">
                         <span class="text-green-500 text-sm font-bold">Status</span>
                         <span class="text-green-400 text-sm font-bold">Disponível para projetos</span>
@@ -168,7 +177,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 px-4 relative z-10">
+    <section id="skills" class="py-24 px-4 bg-slate-900/30">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-3xl md:text-5xl font-bold mb-16" data-aos="fade-up">Tech <span class="text-sky-400">Stack</span></h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -186,18 +195,17 @@
                 </div>
                 <div class="glass-card p-8 rounded-2xl hover-scale group" data-aos="zoom-in" data-aos-delay="400">
                     <div class="text-5xl mb-4 text-orange-500 group-hover:scale-110 transition-transform"><i class="fas fa-cloud"></i></div>
-                    <h4 class="//-bold">Cloudflare</h4>
+                    <h4 class="font-bold">Cloudflare</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--Featured Project: Agendamento -->
-    <section id="projetos" class="py-24 px-4 relative z-10">
+    <!-- Project Section -->
+    <section id="projetos" class="py-24 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Projeto em <span class="text-sky-400">Destaque</span></h2>
-                <p class="text-slate-400">Uma demonstração da minha capacidade técnica e lógica</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Projetos em <span class="text-sky-400">Destaque</span></h2>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
@@ -254,7 +262,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contato" class="py-24 px-4 text-center relative z-10">
+    <section id="contato" class="py-24 px-4 text-center">
         <div class="max-w-3xl mx-auto" data-aos="zoom-in">
             <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Vamos criar o <span class="text-gradient">Próximo Nível</span>?</h2>
             <p class="text-slate-400 mb-12 text-lg">Estou sempre aberto a novas oportunidades e desafios técnicos.</p>
@@ -269,7 +277,7 @@
         </div>
     </section>
 
-    <footer class="py-10 border-t border-slate-800 text-center text-slate-500 text-sm relative z-10">
+    <footer class="py-10 border-t border-slate-800 text-center text-slate-500 text-sm">
         <div class="max-w-7xl mx-auto px-4">
             <p class="font-mono">Designed & Coded by <span class="text-sky-400">Victor Hugo</span> &copy; 2024</p>
         </div>
@@ -283,6 +291,22 @@
             easing: 'ease-out-cubic'
         });
 
+        // Custom Cursor Logic
+        const dot = document.getElementById('cursor-dot');
+        const outline = document.getElementById('cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+
+            // Use requestAnimationFrame for smoother outline movement
+            requestAnimationFrame(() => {
+                outline.style.left = (e.clientX - 16) + 'px';
+                outline.style.top = (e.clientY - 16) + 'px';
+            });
+        });
+
+        // Typewriter Effect
         const texts = [
             "Full Stack Developer in Training",
             "GTI Student @ FATEC",
