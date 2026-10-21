@@ -9,3 +9,5 @@ node_modules/
 .testsprite/
 progress.md
 TASK.md
+
+.vercel
