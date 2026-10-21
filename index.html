@@ -48,21 +48,18 @@
             transform: translateY(-2px);
         }
 
-        /* Fix for layout stability */
         .section-padding { padding: 80px 0; }
 
-        /* Custom Cursor */
         #cursor-dot {
             width: 8px; height: 8px; background-color: var(--accent);
             position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999;
         }
         #cursor-outline {
             width: 40px; height: 40px; border: 2px solid var(--accent);
-            position: fixed; border-radius: 50%; pointer-events: none; z-index: 9998;
+            position: fixed; border-//-radius: 50%; pointer-events: none; z-index: 9998;
             transition: transform 0.1s ease-out;
         }
 
-        /* Scheduling Mockup */
         .mockup-window {
             background: #0f172a;
             border: 1px solid #1e293b;
@@ -83,6 +80,7 @@
                 <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
                 <a href="#skills" class="hover:text-white transition-colors">Skills</a>
                 <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
+                <a href="#mural" class="hover:text-white transition-colors">Mural</a>
                 <a href="#contato" class="text-sky-400 hover:text-sky-300 transition-colors">Contato</a>
             </div>
         </nav>
@@ -121,8 +119,8 @@
                 <p class="text-slate-400 leading-relaxed mb-4 text-lg">
                     Estudante de <span class="text-white font-semibold">GTI na FATEC</span>, focado em construir aplicações escaláveis e interfaces modernas.
                 </p>
-                <p class="text-slate-400 leading-relaxed mb-6">
-                    Especializando-me no ecossistema Full Stack com foco em <span class="text-sky-400">React, TypeScript e Cloudflare</span>. Meu objetivo é criar soluções que unam performance técnica e design centrado no usuário.
+                <p class="text-slate-400 leading-//-relaxed mb-6">
+                    Especializando-me no ecossistema Full Stack com foco em <span class="text-sky-400">React, TypeScript e Cloudflare</span>.
                 </p>
                 <div class="flex gap-4 text-2xl">
                     <a href="#" class="text-slate-500 hover:text-sky-400 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -140,13 +138,9 @@
                         <span class="text-slate-500 text-sm">Foco</span>
                         <span class="font-semibold text-sm">Full Stack Dev</span>
                     </div>
-                    <div class="flex justify-between items-center p-3 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                        <span class="text-slate-500 text-sm">Local</span>
-                        <span class="font-semibold text-sm">Assis, SP</span>
-                    </div>
                     <div class="flex justify-between items-center p-3 rounded-lg bg-green-500/10 border border-green-500/20">
                         <span class="text-green-500 text-sm font-bold">Status</span>
-                        <span class="text-green-400 text-sm font-bold">Disponível para projetos</span>
+                        <span class="text-green-400 text-sm font-bold">Disponível</span>
                     </div>
                 </div>
             </div>
@@ -158,20 +152,20 @@
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-3xl md:text-5xl font-bold mb-16" data-aos="fade-up">Tech <span class="text-sky-400">Stack</span></h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass-card p-8 rounded-2xl text-center group hover:border-sky-400 transition-all" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-5xl mb-4 text-sky-400 group-hover:scale-110 transition-transform"><i class="fab fa-react"></i></div>
+                <div class="glass-card p-8 rounded-2xl text-center hover:border-sky-400 transition-all" data-aos="zoom-in">
+                    <div class="text-5xl mb-4 text-sky-400"><i class="fab fa-react"></i></div>
                     <h4 class="font-bold">React</h4>
                 </div>
-                <div class="glass-card p-8 rounded-2xl text-center group hover:border-sky-400 transition-all" data-aos="zoom-in" data-//-delay="200">
-                    <div class="text-5xl mb-4 text-blue-500 group-hover:scale-110 transition-transform"><i class="fas fa-code"></i></div>
+                <div class="glass-card p-8 rounded-2xl text-center hover:border-sky-400 transition-all" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-5xl mb-4 text-blue-500"><i class="fas fa-code"></i></div>
                     <h4 class="font-bold">TypeScript</h4>
                 </div>
-                <div class="glass-card p-8 rounded-2xl text-center group hover:border-sky-400 transition-all" data-aos="zoom-in" data-//-delay="300">
-                    <div class="text-5xl mb-4 text-yellow-400 group-hover:scale-110 transition-transform"><i class="fab fa-js"></i></div>
+                <div class="glass-card p-8 rounded-2xl text-center hover:border-sky-400 transition-all" data-//-delay="200">
+                    <div class="text-5xl mb-4 text-yellow-400"><i class="fab fa-js"></i></div>
                     <h4 class="font-bold">JavaScript</h4>
                 </div>
-                <div class="glass-card p-8 rounded-2xl text-center group hover:border-sky-400 transition-all" data-//-delay="400">
-                    <div class="text-5xl mb-4 text-orange-500 group-hover:scale-110 transition-transform"><i class="fas fa-cloud"></i></div>
+                <div class="glass-//-card p-8 rounded-2xl text-center hover:border-sky-400 transition-all" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-5xl mb-4 text-orange-500"><i class="fas fa-cloud"></i></div>
                     <h4 class="font-bold">Cloudflare</h4>
                 </div>
             </div>
@@ -183,25 +177,21 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Projeto em <span class="text-sky-400">Destaque</span></h2>
-                <p class="text-slate-400">Aplicação de agendamento inteligente</p>
             </div>
-
             <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
                 <div class="scheduling-mockup p-4 glass-card">
                     <div class="flex items-center justify-between mb-6 px-2">
                         <div class="flex space-x-2">
                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-//-full bg-yellow-500"></div>
                             <div class="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
                         <div class="text-xs font-mono text-slate-500">scheduling-system.app</div>
-                        <div class="w-8"></div>
                     </div>
                     <div class="grid grid-cols-3 gap-4">
                         <div class="col-span-1 space-y-3">
                             <div class="p-3 rounded-lg bg-sky-500/20 border border-sky-500/30 text-xs font-bold text-sky-400">📅 Calendário</div>
                             <div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-400">👤 Clientes</div>
-                            <div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-400">⚙️ Configurações</div>
                         </div>
                         <div class="col-span-2 bg-slate-900/80 rounded-xl p-4 border border-slate-700">
                             <div class="flex justify-between items-center mb-4">
@@ -209,27 +199,16 @@
                                 <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded">Hoje</span>
                             </div>
                             <div class="grid grid-cols-3 gap-2">
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">09:00</div>
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">10:00</div>
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-700 text-slate-500 border border-slate-600 cursor-not-allowed">11:00</div>
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">14:00</div>
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">15:00</div>
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">16:00</div>
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700">09:00</div>
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700">10:00</div>
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-700 text-slate-500 border border-slate-600">11:00</div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="text-left" data-aos="fade-left">
-                    <h3 class="text-3xl font-bold mb-4">Sistema de Agendamento Inteligente</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">
-                        Desenvolvi uma solução para gestão de horários, focando na validação de slots disponíveis e experiência de agendamento simplificada.
-                    </p>
-                    <div class="flex flex-wrap gap-3 mb-8">
-                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full">React</span>
-                        <span class="text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-3 py-1 rounded-full">TypeScript</span>
-                        <span class="text-xs font-mono bg-slate-500/10 text-slate-400 border border-slate-500/20 px-3 py-1 rounded-full">API</span>
-                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Sistema de Agendamento</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Solução focada em gestão de tempo e validação de slots disponíveis em tempo real.</p>
                     <a href="https://github.com/hashickzvictorhugo" target="_blank" class="px-6 py-3 btn-primary text-white rounded-xl font-bold flex items-center w-fit shadow-lg">
                         Ver no GitHub <i class="fab fa-github ml-2"></i>
                     </a>
@@ -238,11 +217,44 @@
         </div>
     </section>
 
+    <!-- Message Wall (Guestbook) -->
+    <section id="mural" class="section-padding px-4 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Mural de <span class="text-sky-400">Mensagens</span></h2>
+                <p class="text-slate-400">Deixe sua mensagem e ela ficará salva no seu navegador!</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Form -->
+                <div class="md:col-span-1 glass-card p-6 rounded-3xl h-fit sticky top-24" data-aos="fade-right">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-mono text-slate-500 mb-1 uppercase">Seu Nome</label>
+                            <input type="text" id="guest-name" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-sky-500 transition-all" placeholder="Ex: João Dev">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-500 mb-1 uppercase">Mensagem</label>
+                            <textarea id="guest-msg" rows="4" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-sky-500 transition-all" placeholder="Fala Victor..."></textarea>
+                        </div>
+                        <button onclick="saveMessage()" class="w-full btn-primary text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center">
+                            Enviar Mensagem <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages List -->
+                <div class="md:col-span-2 space-y-4" id="messages-container" data-aos="fade-left">
+                    <!-- Messages injected here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section id="contato" class="py-24 px-4 text-center">
-        <div class="max-w-3xl mx-auto" data-//-zoom-in>
+        <div class="max-w-3xl mx-auto" data-aos="zoom-in">
             <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Vamos criar o <span class="text-gradient">Próximo Nível</span>?</h2>
-            <p class="text-slate-400 mb-12 text-lg">Estou sempre aberto a novas oportunidades e desafios técnicos.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <a href="https://wa.me/5518988242732" target="_blank" class="px-10 py-5 btn-primary text-white rounded-2xl font-bold text-xl flex items-center justify-center shadow-xl">
                     <i class="fab fa-whatsapp mr-2"></i> WhatsApp
@@ -264,7 +276,7 @@
     <script>
         AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
 
-        // Cursor Logic
+        // Custom Cursor
         const dot = document.getElementById('cursor-dot');
         const outline = document.getElementById('cursor-outline');
         window.addEventListener('mousemove', (e) => {
@@ -294,6 +306,42 @@
                 }
             }, 100);
         })();
+
+        // Mural Logic (LocalStorage)
+        function saveMessage() {
+            const name = document.getElementById('guest-name').value;
+            const msg = document.getElementById('guest-msg').value;
+
+            if (!name || !msg) {
+                alert("Por favor, preencha seu nome e a mensagem!");
+                return;
+            }
+
+            const messages = JSON.parse(localStorage.getItem('vh_messages') || '[]');
+            messages.unshift({ name, msg, date: new Date().toLocaleDateString() });
+            localStorage.setItem('vh_messages', JSON.stringify(messages));
+
+            document.getElementById('guest-name').value = '';
+            document.getElementById('guest-msg').value = '';
+            renderMessages();
+        }
+
+        function renderMessages() {
+            const container = document.getElementById('messages-container');
+            const messages = JSON.parse(localStorage.getItem('vh_messages') || '[]');
+
+            container.innerHTML = messages.map(m => `
+                <div class="glass-card p-6 rounded-3xl animate-fade-in" data-aos="fade-up">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-bold text-sky-400">${m.name}</span>
+                        <span class="text-[10px] font-mono text-slate-500">${m.date}</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">${m.msg}</p>
+                </div>
+            `).join('');
+        }
+
+        window.onload = renderMessages;
     </script>
 </body>
 </html>
