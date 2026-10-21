@@ -4,258 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://images.unsplash.com;">
-    <title>Victor Hugo | Full Stack Engineer</title>
+    <title>Victor Hugo | Full Stack Developer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #0ea5e9;
-            --secondary: #a855f7;
-            --dark-bg: #020617;
+            --bg-dark: #020617;
+            --card-bg: #0f172a;
+            --accent: #38bdf8;
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--dark-bg);
+            background-color: var(--bg-dark);
             color: #f8fafc;
-            overflow-x: hidden;
         }
         .font-mono { font-family: 'Fira Code', monospace; }
 
-        /* Mesh Gradient Background */
-        .mesh-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 1) 0%, rgba(2, 6, 23, 1) 100%);
-        }
-
         .text-gradient {
-            background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Bento Grid Glassmorphism */
-        .bento-card {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        .bento-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-        }
-        .bento-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(56, 189, 248, 0.1) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-        .bento-card:hover::before { opacity: 1; }
-
-        .btn-glow {
-            position: relative;
-            z-index: 1;
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
         }
-        .btn-glow::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, #0ea5e9, #a855f7);
-            filter: blur(15px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-            border-radius: inherit;
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(15, 23, 42, 0.8);
         }
-        .btn-glow:hover::after { opacity: 0.6; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px #0ea5e9;
+        }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--dark-bg); }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
 
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .float-animation { animation: float 5s ease-in-out infinite; }
+        .scheduling-mockup {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body class="antialiased">
-    <div class="mesh-bg"></div>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 px-6 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center glass-card px-6 py-3 rounded-full border border-white/10">
-            <div class="text-lg font-bold font-mono gradient-text">&lt;vh.dev /&gt;</div>
+            <div class="text-lg font-bold font-mono text-sky-400 tracking-tighter">
+                &lt;vh.dev /&gt;
+            </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
                 <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
                 <a href="#skills" class="hover:text-white transition-colors">Skills</a>
                 <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
                 <a href="#contato" class="text-sky-400 hover:text-sky-300 transition-colors">Contato</a>
             </div>
-            <div class="md:hidden text-slate-400"><i class="fas fa-bars cursor-pointer"></i></div>
-        </div>
-    </nav>
+            <div class="md:hidden text-slate-400 cursor-pointer"><i class="fas fa-bars"></i></div>
+        </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center px-4 pt-20">
+    <section id="inicio" class="min-h-screen flex items-center justify-center px-4 relative">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-sky-500/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-[120px]"></div>
+
         <div class="max-w-5xl mx-auto text-center relative">
-            <div class="relative inline-block mb-8" data-aos="zoom-in">
-                <div class="absolute inset-0 bg-sky-500 blur-2xl opacity-20 rounded-full"></div>
+            <div class="mb-8 relative inline-block" data-aos="zoom-in">
                 <img src="https://avatars.githubusercontent.com/u/169914953?v=4"
-                     class="relative w-32 h-32 rounded-full border-2 border-sky-500/50 p-1 float-animation">
+                     class="w-32 h-32 rounded-full border-2 border-sky-500/30 p-1 shadow-2xl mx-auto">
             </div>
-
             <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight" data-aos="fade-up">
-                <span class="text-slate-100">I'm</span> <span class="text-gradient">Victor Hugo</span>
+                <span class="text-slate-100">Olá, eu sou o</span> <br><span class="text-gradient">Victor Hugo</span>
             </h1>
-
             <div class="h-8 mb-10" data-aos="fade-up" data-aos-delay="100">
                 <p id="typewriter" class="text-xl md:text-2xl font-mono text-slate-400"></p>
             </div>
-
             <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
-                <a href="#projetos" class="px-8 py-4 btn-glow bg-sky-500 text-white rounded-full font-bold text-lg flex items-center justify-center shadow-lg">
-                    Ver Meus Projetos <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                <a href="#projetos" class="px-8 py-4 btn-primary text-white rounded-xl font-bold text-lg flex items-center justify-center">
+                    Ver Projetos <i class="fas fa-arrow-right ml-2 text-sm"></i>
                 </a>
-                <a href="https://github.com/hashickzvictorhugo" target="_blank" class="px-8 py-4 glass-card text-slate-300 rounded-full font-bold text-lg flex items-center justify-center hover:text-white transition-all">
+                <a href="https://github.com/hashickzvictorhugo" target="_blank" class="px-8 py-4 glass-card text-slate-300 rounded-xl font-bold text-lg flex items-center justify-center hover:text-white transition-all">
                     <i class="fab fa-github mr-2"></i> GitHub
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section (Bento Grid Style) -->
+    <!-- About Section -->
     <section id="sobre" class="py-24 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up">Informações <span class="text-sky-400">Core</span></h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Big Bio -->
-                <div class="md:col-span-2 bento-card p-8 rounded-3xl" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-4 text-sky-400">Quem sou eu?</h3>
-                    <p class="text-slate-400 leading-relaxed text-lg">
-                        Estudante de <span class="text-white font-semibold">GTI na FATEC</span>, transformando curiosidade técnica em soluções reais.
-                        Atualmente focado no ecossistema Full Stack, unindo a precisão do <span class="text-sky-400">TypeScript</span> à flexibilidade do <span class="text-sky-400">React</span>.
-                        Minha missão é criar interfaces que não sejam apenas funcionais, mas memoráveis.
-                    </p>
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <span class="w-8 h-1 bg-sky-500 mr-3"></span> Sobre Mim
+                </h2>
+                <p class="text-slate-400 leading-relaxed mb-4 text-lg">
+                    Estudante de <span class="text-white font-semibold">GTI na FATEC</span>, focado em construir aplicações escaláveis e interfaces modernas.
+                </p>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    Especializando-me no ecossistema Full Stack com foco em <span class="text-sky-400">React, TypeScript e Cloudflare</span>. Busco sempre a eficiência do código e a melhor experiência para o usuário final.
+                </p>
+                <div class="flex gap-4 text-2xl">
+                    <a href="#" class="text-slate-500 hover:text-sky-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/5518988242732" class="text-slate-500 hover:text-green-400 transition-colors"><i class="fab fa-whatsapp"></i></a>
                 </div>
-
-                <!-- Status Card -->
-                <div class="bento-card p-8 rounded-3xl flex flex-col justify-center" data-aos="fade-left">
-                    <div class="text-center">
-                        <span class="text-xs font-mono text-slate-500 uppercase">Localização</span>
-                        <p class="text-xl font-bold mb-4">Assis, SP</p>
-                        <span class="text-xs font-mono text-slate-500 uppercase">Status</span>
-                        <p class="text-xl font-bold text-green-400">Disponível para Projetos</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl" data-aos="fade-left">
+                <h3 class="text-xl font-bold mb-6 font-mono text-sky-400">&lt;status_atual /&gt;</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-3 rounded-lg bg-slate-800/50 border border-slate-700/50">
+                        <span class="text-slate-500 text-sm">Educação</span>
+                        <span class="font-semibold text-sm">GTI - FATEC</span>
                     </div>
-                </div>
-
-                <!-- Tech Stack Small Card -->
-                <div class="bento-card p-8 rounded-3xl" data-aos="fade-up">
-                    <h4 class="font-bold mb-4 text-slate-300">Foco Atual</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full text-xs font-mono">Cloudflare Workers</span>
-                        <span class="px-3 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-full text-xs font-mono">Next.js</span>
-                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-mono">TypeScript</span>
+                    <div class="flex justify-between items-center p-3 rounded-lg bg-slate-800/50 border border-slate-700/50">
+                        <span class="text-slate-500 text-sm">Foco</span>
+                        <span class="font-semibold text-sm">Full Stack Dev</span>
                     </div>
-                </div>
-
-                <!-- Quote/Motto -->
-                <div class="md:col-span-2 bento-card p-8 rounded-3xl bg-gradient-to-r from-sky-500/10 to-purple-500/10" data-aos="fade-up">
-                    <p class="text-2xl font-medium italic text-slate-300">
-                        "O código é a poesia da era digital. Escrevo cada linha para que a experiência do usuário seja fluida, rápida e impactante."
-                    </p>
-                </div>
+                    <div class="flex justify-between items-center p-3 rounded-lg bg-slate-800/50 border border-slate-700/50">
+                        <span class="text-slate-500 text-sm">Local</span>
+                        <span class="font-semibold text-sm">Assis, SP</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+                        <span class="text-green-500 text-sm font-bold">Status</span>
+                        <span class="text-green-400 text-sm font-bold">Disponível para projetos</span>
+                    </div>
+                </div}
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 px-4 relative">
+    <section id="skills" class="py-24 px-4 bg-slate-900/30">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-20" data-aos="fade-up">Arsenal <span class="text-sky-400">Técnico</span></h2>
-
+            <h2 class="text-3xl md:text-5xl font-bold mb-16" data-aos="fade-up">Tech <span class="text-sky-400">Stack</span></h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bento-card p-8 rounded-3xl hover-scale group" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-5xl mb-4 transition-transform group-hover:rotate-12"><i class="fab fa-react text-sky-400"></i></div>
+                <div class="glass-card p-8 rounded-2xl hover-scale group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-5xl mb-4 text-sky-400 group-hover:scale-110 transition-transform"><i class="fab fa-react"></i></div>
                     <h4 class="font-bold">React</h4>
                 </div>
-                <div class="bento-card p-8 rounded-3xl hover-scale group" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-5xl mb-4 transition-transform group-hover:rotate-12"><i class="fas fa-code text-blue-500"></i></div>
+                <div class="glass-card p-8 rounded-2xl hover-scale group" data-aos="zoom-in" data-//-delay="200">
+                    <div class="text-5xl mb-4 text-blue-500 group-hover:scale-110 transition-transform"><i class="fas fa-code"></i></div>
                     <h4 class="font-bold">TypeScript</h4>
                 </div>
-                <div class="bento-card p-8 rounded-3xl hover-scale group" data-aos="zoom-in" data-//-delay="300">
-                    <div class="text-5xl mb-4 transition-transform group-hover:rotate-12"><i class="fab fa-js text-yellow-400"></i></div>
+                <div class="glass-card p-8 rounded-2xl hover-scale group" data-//-delay="300">
+                    <div class="text-5xl mb-4 text-yellow-400 group-hover:scale-110 transition-transform"><i class="fab fa-js"></i></div>
                     <h4 class="font-bold">JavaScript</h4>
                 </div>
-                <div class="bento-card p-8 rounded-3xl hover-//-scale group" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="text-5xl mb-4 transition-transform group-hover:rotate-12"><i class="fas fa-cloud text-orange-500"></i></div>
+                <div class="glass-card p-8 rounded-2xl hover-scale group" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-5xl mb-4 text-orange-500 group-hover:scale-110 transition-transform"><i class="fas fa-cloud"></i></div>
                     <h4 class="font-bold">Cloudflare</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projetos" class="py-24 px-4 bg-slate-900/30">
+    <!--Featured Project: Agendamento -->
+    <section id="projetos" class="py-24 px-4">
         <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-end mb-16" data-aos="fade-right">
-                <div>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Projetos <span class="text-sky-400">Selecionados</span></h2>
-                    <p class="text-slate-400">Transformando ideias em código funcional</p>
-                </div>
-                <a href="https://github.com/hashickzvictorhugo" target="_blank" class="hidden md:block font-mono text-sky-400 hover:text-sky-300 transition-all">
-                    visit github <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                </a>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Projeto em <span class="text-sky-400">Destaque</span></h2>
+                <p class="text-slate-400">Uma demonstração da minha capacidade técnica e lógica</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="bento-card rounded-3xl overflow-hidden group" data-aos="fade-up">
-                    <div class="h-56 bg-gradient-to-br from-sky-600 to-indigo-800 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:scale-110 transition-transform duration-700">
-                            <i class="fas fa-rocket text-8xl text-white"></i>
+            <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+                <div class="scheduling-mockup p-4 glass-card">
+                    <!-- Mockup Header -->
+                    <div class="flex items-center justify-between mb-6 px-2">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
+                        <div class="text-xs font-mono text-slate-500">scheduling-system.app</div>
+                        <div class="w-8"></div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3">Digital Portfolio v2.0</h3>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Uma experiência imersiva de portfólio focada em UX, utilizando Tailwind CSS e animações avançadas para destacar a identidade do desenvolvedor.</p>
-                        <div class="flex gap-2">
-                            <span class="text-[10px] font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2 py-1 rounded">Tailwind</span>
-                            <span class="text-[10px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-1 rounded">AOS.js</span>
+                    <!-- Mockup Content -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="col-span-1 space-y-3">
+                            <div class="p-3 rounded-lg bg-sky-500/20 border border-sky-500/30 text-xs font-bold text-sky-400">📅 Calendário</div>
+                            <div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-400">👤 Clientes</div>
+                            <div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-400">⚙️ Configurações</div>
+                        </div>
+                        <div class="col-span-2 bg-slate-900/80 rounded-xl p-4 border border-slate-700">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-sm font-bold">Horários Disponíveis</span>
+                                <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded">Hoje</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">09:00</div>
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">10:00</div>
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-700 text-slate-500 border border-slate-600 cursor-not-allowed">11:00</div>
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">14:00</div>
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">15:00</div>
+                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700 hover:border-sky-500 cursor-pointer transition-all">16:00</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card rounded-3xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-56 bg-gradient-to-br from-slate-700 to-slate-900 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:scale-110 transition-transform duration-700">
-                            <i class="fas fa-database text-8xl text-white"></i>
-                        </div>
+
+                <div class="text-left" data-aos="fade-left">
+                    <h3 class="text-3xl font-bold mb-4">Sistema de Agendamento Inteligente</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Um projeto complexo focado em resolver conflitos de horários e otimizar a gestão de tempo.
+                        Desenvolvi a lógica de verificação de slots disponíveis e a interface de usuário fluida para garantir que o agendamento seja feito em menos de 3 cliques.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full">React Hooks</span>
+                        <span class="text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-3 py-1 rounded-full">TypeScript</span>
+                        <span class="text-xs font-mono bg-slate-500/10 text-slate-400 border border-slate-500/20 px-3 py-1 rounded-full">LocalStorage API</span>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3">Sistemas de Gestão GTI</h3>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Desenvolvimento de lógicas de gestão e automação de processos estudados na FATEC, focando em eficiência de dados e escalabilidade.</p>
-                        <div class="flex gap-2">
-                            <span class="text-[10px] font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-1 rounded">TypeScript</span>
-                            <span class="text-[10px] font-mono bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-1 rounded">Node.js</span>
-                        </div>
-                    </div>
+                    <a href="https://github.com/hashickzvictorhugo" target="_blank" class="px-6 py-3 btn-primary text-white rounded-xl font-bold flex items-center w-fit shadow-lg">
+                        Ver no GitHub <i class="fab fa-github ml-2"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -264,10 +245,10 @@
     <!-- Contact Section -->
     <section id="contato" class="py-24 px-4 text-center">
         <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Vamos criar o <span class="text-gradient">Próximo Nível</span>?</h2>
-            <p class="text-slate-400 mb-12 text-lg">Estou aberto a propostas, parcerias ou apenas trocar ideia sobre tecnologia.</p>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Vamos criar algo <span class="text-gradient">incrível</span> juntos?</h2>
+            <p class="text-slate-400 mb-12 text-lg">Estou sempre aberto a novas oportunidades e desafios técnicos.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="https://wa.me/5518988242732" target="_blank" class="px-10 py-5 btn-glow bg-sky-500 text-white rounded-2xl font-bold text-xl flex items-center justify-center shadow-2xl">
+                <a href="https://wa.me/5518988242732" target="_blank" class="px-10 py-5 btn-primary text-white rounded-2xl font-bold text-xl flex items-center justify-center shadow-xl">
                     <i class="fab fa-whatsapp mr-2"></i> WhatsApp
                 </a>
                 <a href="https://github.com/hashickzvictorhugo" target="_blank" class="px-10 py-5 glass-card text-slate-300 rounded-2xl font-bold text-xl flex items-center justify-center hover:text-white transition-all">
@@ -285,14 +266,12 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initializing AOS
         AOS.init({
             duration: 1000,
             once: true,
             easing: 'ease-out-cubic'
         });
 
-        // Typewriter Effect
         const texts = [
             "Full Stack Developer in Training",
             "GTI Student @ FATEC",
