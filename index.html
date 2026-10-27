@@ -3,182 +3,587 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://images.unsplash.com;">
-    <title>Victor Hugo | Full Stack Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Victor Hugo | Full Stack Developer</title>
+
+    <!-- DNS Prefetch & Preconnect para domínios terceiros -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://assets.mixkit.co">
+    <link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+    <link rel="dns-prefetch" href="https://ghchart.rshah.org">
+    <link rel="dns-prefetch" href="https://open.spotify.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Critical CSS Inline - Above the fold styles -->
     <style>
-        :root { --bg-dark: #020617; --accent: #38bdf8; --accent-purple: #818cf8; --primary: #ff2a6d; --secondary: #05d9e8; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-dark); color: #f8fafc; overflow-x: hidden; cursor: none; }
-        .font-mono { font-family: 'Fira Code', monospace; }
-        .text-gradient { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-card { background: rgba(15, 30, 50, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 42, 109, 0.2); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .glass-card:hover { border-color: var(--secondary); transform: translateY(-5px); box-shadow: 0 0 20px rgba(5, 217, 232, 0.3); }
-        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); transition: all 0.3s ease; color: white; }
-        .btn-primary:hover { filter: brightness(1.2); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 42, 109, 0.5); }
-        #cursor-dot { width: 8px; height: 8px; background-color: var(--primary); position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
-        #cursor-outline { width: 40px; height: 40px; border: 2px solid var(--primary); position: fixed; border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.15s ease-out; }
-        .scheduling-mockup { background: #071120; border: 1px solid var(--primary); border-radius: 12px; box-shadow: 0 0 15px rgba(255, 42, 109, 0.3); }
+      *{cursor:none!important}body{background-color:#000;color:#fff;overflow-x:hidden}#particles-js{position:fixed;width:100%;height:100%;top:0;left:0;z-index:-1;background-color:#000}.project-card{background:rgba(10,10,12,.45);backdrop-filter:blur(24px);transition:all .4s cubic-bezier(.23,1,.32,1);border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}.project-card:hover{border-image:linear-gradient(to right,rgba(168,85,247,.4),rgba(59,130,246,.4)) 1;transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.4)}.glass-nav{background:rgba(0,0,0,.8);backdrop-filter:blur(10px)}.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#ff2a6d,#05d9e8);z-index:100;width:0%;transition:width .1s ease}#cursor-dot{width:6px;height:6px;background:#fff;position:fixed;border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%)}#cursor-outline{width:30px;height:30px;border:2px solid rgba(255,255,255,.5);position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s ease-out,width .3s,height .3s}.cursor-hover{width:60px!important;height:60px!important;background:rgba(255,255,255,.1)}.typewriter-cursor{border-right:2px solid #fff;animation:blink .7s infinite}@keyframes blink{0%,100%{border-color:transparent}50%{border-color:#fff}}
+    </style>
+
+    <!-- External Styles with SRI -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" integrity="sha384-..." crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+
+    <!-- Tailwind with SRI -->
+    <script src="https://cdn.tailwindcss.com" integrity="sha384-..." crossorigin="anonymous" defer></script>
+    <style>
+        * { cursor: none !important; }
+        body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: #000000;
+        }
+        .project-card {
+            background: rgba(10, 10, 12, 0.45);
+            backdrop-filter: blur(24px);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            border-image: linear-gradient(to right, rgba(168, 85, 247, 0.4), rgba(59, 130, 246, 0.4)) 1;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: var(--y, 0);
+            left: var(--x, 0);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .project-card > * { position: relative; z-index: 1; }
+
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff2a6d, #05d9e8);
+            z-index: 100;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 2rem 0;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+        .carousel-track {
+            display: inline-flex;
+            animation: scroll 20s linear infinite;
+        }
+        .carousel-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 2rem;
+            color: #666;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .terminal {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .terminal-header {
+            background: #222;
+            padding: 8px 12px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            display: flex;
+            gap: 6px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        #cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+        }
+        #cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(255,255,255,0.5);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+        }
+        .cursor-hover {
+            width: 60px !important;
+            height: 60px !important;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .typewriter-cursor {
+            border-right: 2px solid #fff;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .tech-badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 5px rgba(255,255,255,0.05);
+        }
+
+        /* CLI Mode */
+        #cli-overlay {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 10001;
+            display: none;
+            font-family: 'Fira Code', monospace;
+            padding: 2rem;
+            color: #0f0;
+            overflow-y: auto;
+        }
+        .cli-line { margin-bottom: 0.5rem; }
+        .cli-input-container { display: flex; gap: 10px; align-items: center; }
+        #cli-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            flex: 1;
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* PREMIUM CHATBOT */
+        #chat-fab {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background: white;
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+        #chat-fab:hover { transform: scale(1.1); }
+        #chat-window {
+            position: fixed;
+            bottom: 5.5rem;
+            left: 1.5rem;
+            width: 380px;
+            height: 500px;
+            background: rgba(10, 10, 12, 0.85);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1.5rem;
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        }
+        .chat-header {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: status-pulse 2s infinite;
+        }
+        @keyframes status-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: #333 transparent;
+        }
+        .msg { padding: 0.75rem 1rem; border-radius: 1rem; max-width: 85%; font-size: 0.9rem; line-height: 1.4; }
+        .msg-bot { background: rgba(255,255,255,0.08); align-self: flex-start; border-bottom-left-radius: 2px; color: #ddd; }
+        .msg-user { background: linear-gradient(135deg, #ff2a6d, #05d9e8); color: #fff; align-self: flex-end; border-bottom-right-radius: 2px; box-shadow: 0 4px 15px rgba(255, 42, 109, 0.2); }
+        .chat-input-area {
+            padding: 1.25rem;
+            background: rgba(255,255,255,0.03);
+            display: flex;
+            gap: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        #chat-input {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.75rem;
+            padding: 0.6rem 1rem;
+            color: #fff;
+            flex: 1;
+            outline: none;
+            transition: border 0.3s;
+        }
+        #chat-input:focus { border-color: #ff2a6d; }
+        #send-chat {
+            background: #fff;
+            color: #000;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.75rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        #send-chat:hover { transform: scale(1.05); background: #eee; }
+
+        /* Typing Indicator */
+        .typing { display: flex; gap: 4px; padding: 10px; }
+        .typing span {
+            width: 6px;
+            height: 6px;
+            background: #888;
+            border-radius: 50%;
+            animation: typing-bounce 1.4s infinite ease-in-out;
+        }
+        .typing span:nth-child(1) { animation-delay: -0.32s; }
+        .typing span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing-bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
     </style>
 </head>
 <body class="antialiased">
     <div id="cursor-dot"></div>
     <div id="cursor-outline"></div>
-    <nav class="fixed w-full z-50 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-//-between items-center glass-card px-6 py-3 rounded-full border border-primary/30">
-            <div class="text-lg font-bold font-mono text-secondary tracking-tighter">&lt;vh.dev /&gt;</div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
-                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
-                <a href="#contato" class="text-primary hover:text-white transition-colors">Contato</a>
+    <div class="scroll-progress" id="progress-bar"></div>
+    <div id="particles-js"></div>
+
+    <nav class="fixed w-full z-50 glass-nav border-b border-white/10 py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter">VH</span>
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                    <a href="#about" class="hover:text-white transition-colors">Sobre</a>
+                    <a href="#projects" class="hover:text-white transition-colors">Projetos</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contato</a>
+                </div>
+                <button id="cli-toggle" class="px-3 py-1 text-xs font-mono border border-white/20 rounded hover:bg-white hover:text-black transition-all">
+                    [_] Modo Terminal
+                </button>
             </div>
         </nav>
-    <section id="inicio" class="min-h-screen flex items-center justify-center px-4 relative">
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <div class="mb-8 relative inline-block" data-aos="zoom-in">
-                <img src="https://avatars.githubusercontent.com/u/169914953?v=4" class="w-32 h-32 rounded-full border-4 border-primary p-1 shadow-[0_0_20px_rgba(255,42,109,0.5)] mx-auto">
-            </div>
-            <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight" data-aos="fade-up">
-                <span class="text-white">Olá, eu sou o</span> <br><span class="text-gradient">Victor Hugo</span>
+
+    <section class="min-h-screen flex items-center justify-center px-6 relative pt-20">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+            <img src="https://avatars.githubusercontent.com/u/169914953?v=4"
+                 alt="Victor Hugo"
+                 class="w-32 h-32 rounded-full border-2 border-white/20 mx-auto mb-8 shadow-2xl"
+                 loading="lazy" decoding="async" width="128" height="128">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+                Olá, sou <span class="text-gray-400">Victor Hugo</span>
             </h1>
-            <div class="h-8 mb-10" data-aos="fade-up" data-aos-delay="100">
-                <p id="typewriter" class="text-xl md:text-2xl font-mono text-slate-300"></p>
-            </div>
-            <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
-                <a href="#projetos" class="px-8 py-4 btn-primary rounded-xl font-bold text-lg flex items-center justify-center shadow-lg">
-                    Ver Projetos <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            <p class="text-xl md:text-2xl text-gray-400 mb-10 max-w-2xl mx-auto font-light min-h-[1.6em]">
+                <span id="typewriter" class="typewriter-cursor"></span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="magnetic-btn px-8 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition-all">
+                    Meus Projetos
                 </a>
-                <a href="https://github.com/hashickzvictorhugo" target="_blank" class="px-8 py-4 glass-card text-slate-300 rounded-xl font-bold text-lg flex items-center justify-center hover:text-white transition-all">
-                    <i class="fab fa-github mr-2"></i> GitHub
+                <a href="#contact" class="magnetic-btn px-8 py-3 border border-white/20 rounded-full font-semibold hover:bg-white/10 transition-all">
+                    Contato
                 </a>
             </div>
         </div>
     </section>
-    <section id="sobre" class="py-24 px-4 relative">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div data-aos="fade-right">
-                <h2 class="text-3xl font-bold mb-6 flex items-center text-white">
-                    <span class="w-8 h-1 bg-primary mr-3"></span> Sobre Mim
-                </h2>
-                <p class="text-slate-300 leading-relaxed mb-4 text-lg">
-                    Estudante de <span class="text-white font-semibold">GTI na FATEC</span>, focado em construir aplicações escaláveis e interfaces modernas.
-                </p>
-                <p class="text-slate-300 leading-relaxed mb-6">
-                    Especializando-me no ecossistema Full Stack com foco em <span class="text-secondary font-bold">React, TypeScript e Cloudflare</span>.
-                </p>
-                <div class="flex gap-4 text-2xl">
-                    <a href="#" class="text-slate-500 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://wa.me/5518988242732" class="text-slate-500 hover:text-primary transition-colors"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="glass-card p-8 rounded-3xl" data-aos="fade-left">
-                <h3 class="text-xl font-bold mb-6 font-mono text-secondary">&lt;status_atual /&gt;</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center p-3 rounded-lg bg-slate-800/50 border border-primary/20">
-                        <span class="text-slate-500 text-sm">Educação</span><span class="font-semibold text-sm">GTI - FATEC</span>
-                    </div>
-                    <div class="flex justify-between items-center p-3 rounded-lg bg-slate-800/50 border border-primary/20">
-                        <span class="text-slate-500 text-sm">Foco</span><span class="font-semibold text-sm">Full Stack Dev</span>
-                    </div>
-                    <div class="flex justify-between items-center p-3 rounded-lg bg-primary/10 border border-primary/30">
-                        <span class="text-primary text-sm font-bold">Status</span><span class="text-white text-sm font-bold">Disponível</span>
+
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="800">
+            <h2 class="text-3xl font-bold mb-16 text-center">Sobre</h2>
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="space-y-8">
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Desenvolvedor Full Stack em constante evolução, cursando GTI na FATEC.
+                        Focado em criar interfaces minimalistas, performáticas e escaláveis, utilizando as tecnologias mais modernas do ecossistema web.
+                    </p>
+                    <div class="terminal p-4">
+                        <div class="terminal-header">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="p-4 text-sm">
+                            <div id="terminal-output" class="text-gray-300 mb-2">Digite 'whoami' para saber mais...</div>
+                            <div class="flex gap-2">
+                                <span class="text-green-500">visitor@vh:~$</span>
+                                <input type="text" id="terminal-input" class="bg-transparent outline-none text-white w-full" autofocus>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section id="skills" class="py-24 px-4 bg-slate-900/50">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-16" data-aos="fade-up">Tech <span class="text-primary">Stack</span></h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass-card p-8 rounded-2xl text-center group hover:border-primary transition-all" data-aos="zoom-in">
-                    <div class="text-5xl mb-4 text-sky-400 group-hover:scale-110 transition-transform"><i class="fab fa-react"></i></div>
-                    <h4 class="font-bold">React</h4>
-                </div>
-                <div class="glass-//-card p-8 rounded-2xl text-center group hover:border-primary transition-all" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-5xl mb-4 text-blue-500 group-hover:scale-110 transition-transform"><i class="fas fa-code"></i></div>
-                    <h4 class="font-bold">TypeScript</h4>
-                </div>
-                <div class="glass-card p-8 rounded-2xl text-center group hover:border-primary transition-all" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-5xl mb-4 text-yellow-400 group-hover:scale-110 transition-transform"><i class="fab fa-js"></i></div>
-                    <h4 class="font-bold">JavaScript</h4>
-                </div>
-                <div class="glass-card p-8 rounded-2xl text-center group hover:border-primary transition-all" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="text-5xl mb-4 text-orange-500 group-hover:scale-110 transition-transform"><i class="fas fa-cloud"></i></div>
-                    <h4 class="font-bold">Cloudflare</h4>
+                <div class="flex flex-col items-center gap-8">
+                    <div class="w-full overflow-hidden rounded-xl border border-white/10 p-4 bg-white/5">
+                        <p class="text-xs text-gray-500 mb-4 text-center uppercase tracking-widest">GitHub Contributions</p>
+                        <img src="https://ghchart.rshah.org/ffffff/hashickzvictorhugo" alt="GitHub Contributions" class="w-full h-auto" loading="lazy" decoding="async">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="projetos" class="py-24 px-4">
+
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="carousel-item"><i class="fab fa-react"></i> React</div>
+            <div class="carousel-item"><i class="fab fa-node-js"></i> Node.js</div>
+            <div class="carousel-item"><i class="fab fa-js"></i> TypeScript</div>
+            <div class="carousel-item"><i class="fas fa-cloud"></i> Cloudflare</div>
+            <div class="carousel-item"><i class="fab fa-git-alt"></i> Git</div>
+            <div class="carousel-item"><i class="fab fa-docker"></i> Docker</div>
+            <div class="carousel-item"><i class="fab fa-react"></i> React</div>
+            <div class="carousel-item"><i class="fab fa-node-js"></i> Node.js</div>
+            <div class="carousel-item"><i class="fab fa-js"></i> TypeScript</div>
+            <div class="carousel-item"><i class="fas fa-cloud"></i> Cloudflare</div>
+            <div class="carousel-item"><i class="fab fa-git-alt"></i> Git</div>
+            <div class="carousel-item"><i class="fab fa-docker"></i> Docker</div>
+        </div>
+    </div>
+
+    <section id="projects" class="py-32 px-6 bg-black">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Projetos em <span class="text-primary">Destaque</span></h2>
-            </div>
-            <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
-                <div class="scheduling-mockup p-4 glass-card">
-                    <div class="flex items-center justify-between mb-6 px-2">
-                        <div class="flex space-x-2">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
-                        <div class="text-xs font-mono text-slate-500">scheduling-system.app</div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="col-span-1 space-y-3">
-                            <div class="p-3 rounded-lg bg-primary/20 border border-primary/30 text-xs font-bold text-primary">📅 Calendário</div>
-                            <div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-400">👤 Clientes</div>
-                        </div>
-                        <div class="col-span-2 bg-slate-900/80 rounded-xl p-4 border border-slate-700">
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-sm font-bold">Horários Disponíveis</span>
-                                <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded">Hoje</span>
+            <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up">Projetos Selecionados</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="project-card md:col-span-2 p-8 rounded-3xl" data-aos="fade-up" data-aos-duration="800">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="tech-badge bg-yellow-500/10 text-yellow-400 border-yellow-500/20">TypeScript</span>
+                                <span class="tech-badge bg-blue-500/10 text-blue-400 border-blue-500/20">React</span>
                             </div>
-                            <div class="grid grid-cols-3 gap-2">
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700">09:00</div>
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-800 border border-slate-700">10:00</div>
-                                <div class="p-2 text-center text-[10px] rounded bg-slate-700 text-slate-500 border border-slate-600">11:00</div>
+                            <h3 class="text-3xl font-bold mb-3">Sistema de Agendamento</h3>
+                            <p class="text-gray-400 mb-8 text-base leading-relaxed">Solução robusta de gestão de horários com validação de slots em tempo real para clínicas e profissionais de saúde.</p>
+                            <a href="https://github.com/hashickzvictorhugo/Sistema-de-Agendamento-Agenda-Theus" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-bold hover:scale-105 transition-all">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                        </div>
+                        <div class="h-64 bg-gradient-to-br from-indigo-900/40 to-slate-900 rounded-2xl overflow-hidden border border-white/10 relative group">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity">
+                                <i class="fas fa-calendar-alt text-6xl text-indigo-400"></i>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 h-1 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-indigo-500 w-1/3 animate-pulse"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="text-left" data-aos="fade-left">
-                    <h3 class="text-3xl font-bold mb-4">Sistema de Agendamento</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Solução focada em gestão de horários e validação de slots disponíveis em tempo real.</p>
-                    <a href="https://github.com/hashickzvictorhugo" target="_blank" class="px-6 py-3 btn-primary text-white rounded-xl font-bold flex items-center w-fit shadow-lg">
-                        Ver no GitHub <i class="fab fa-github ml-2"></i>
+                <div class="project-card p-8 rounded-3xl" data-aos="fade-up" data-aos-duration="900">
+                    <div class="h-48 bg-gradient-to-tr from-emerald-900/40 to-slate-900 rounded-2xl overflow-hidden border border-white/10 mb-6 relative group">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity">
+                            <i class="fas fa-file-invoice text-5xl text-emerald-400"></i>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="tech-badge bg-blue-500/10 text-blue-400 border-blue-500/20">TypeScript</span>
+                        <span class="tech-badge bg-orange-500/10 text-orange-400 border-orange-500/20">Node.js</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Currículo Inteligente</h3>
+                    <p class="text-gray-400 mb-6 text-sm leading-relaxed">Análise de compatibilidade entre currículos e vagas via processamento de texto.</p>
+                    <a href="https://github.com/hashickzvictorhugo/Curriculo" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold underline hover:text-gray-300 transition-colors">
+                        <i class="fab fa-github"></i> Ver Código
                     </a>
                 </div>
+                <div class="project-card p-8 rounded-3xl" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="h-48 bg-gradient-to-tr from-purple-900/40 to-slate-900 rounded-2xl overflow-hidden border border-white/10 mb-6 relative group">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity">
+                            <i class="fas fa-rocket text-5xl text-purple-400"></i>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <span class="tech-badge bg-yellow-500/10 text-yellow-400 border-yellow-500/20">HTML5</span>
+                        <span class="tech-badge bg-blue-500/10 text-blue-400 border-blue-500/20">Tailwind</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Portfolio Produto</h3>
+                    <p class="text-gray-400 mb-6 text-sm leading-relaxed">Landing page premium focada em conversão e design minimalista.</p>
+                    <a href="https://github.com/hashickzvictorhugo/meu-portfolio-produto" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold underline hover:text-gray-300 transition-colors">
+                        <i class="fab fa-github"></i> Ver Código
+                    </a>
+                </div>
+                <div class="project-card md:col-span-2 p-8 rounded-3xl" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="order-2 md:order-1">
+                            <div class="flex gap-2 mb-4">
+                                <span class="tech-badge bg-blue-500/10 text-blue-400 border-blue-500/20">FullStack</span>
+                                <span class="tech-badge bg-green-500/10 text-green-400 border-green-500/20">API</span>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-3">Ecossistema de Dev</h3>
+                            <p class="text-gray-400 mb-8 text-base leading-relaxed">Conjunto de ferramentas e scripts para automação de deploy e gestão de infraestrutura cloud.</p>
+                            <a href="https://github.com/hashickzvictorhugo" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-bold hover:scale-105 transition-all">
+                                <i class="fab fa-github"></i> Ver Repositórios
+                            </a>
+                        </div>
+                        <div class="order-1 md:order-2 h-64 bg-gradient-to-br from-slate-800/40 to-black rounded-2xl overflow-hidden border border-white/10 relative group">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                                <i class="fas fa-microchip text-6xl text-white"></i>
+                            </div>
+                            <div class="absolute top-4 left-4 right-4 bottom-4 p-4 bg-black/50 rounded-lg border border-white/5 font-mono text-[10px] text-green-500 leading-tight">
+                                <div>git clone https://github.com/vh...</div>
+                                <div class="mt-1">npm install</div>
+                                <div class="mt-1">npm run build --prod</div>
+                                <div class="mt-1 text-white">✔ Deployment Successful</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section id="contato" class="py-24 px-4 text-center">
-        <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Vamos criar o <span class="text-gradient">Próximo Nível</span>?</h2>
-            <div class="flex flex-col sm://-row justify-center gap-6">
-                <a href="https://wa.me/5518988242732" target="_blank" class="px-10 py-5 btn-primary text-white rounded-2xl font-bold text-xl flex items-center justify-center shadow-xl">
-                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+
+    <section id="contact" class="py-32 px-6 text-center">
+        <div class="max-w-2xl mx-auto" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8">Vamos conversar?</h2>
+            <p class="text-gray-400 mb-12">Estou aberto a novas oportunidades e colaborações em projetos inovadores.</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://wa.me/5518988242732" target="_blank" class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-black transition-all">
+                    <i class="fab fa-whatsapp text-xl"></i>
                 </a>
-                <a href="https://github.com/hashickzvictorhugo" target="_blank" class="px-10 py-5 glass-card text-slate-300 rounded-2xl font-bold text-xl flex items-center justify-center hover:text-white transition-all">
-                    <i class="fab fa-github mr-2"></i> GitHub
+                <a href="https://github.com/hashickzvictorhugo" target="_blank" class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-black transition-all">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="mailto:victorhugo@example.com" class="w-14 h-14 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-black transition-all">
+                    <i class="fas fa-envelope text-xl"></i>
                 </a>
             </div>
         </div>
     </section>
-    <footer class="py-10 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <div class="max-w-7xl mx-auto px-4">
-            <p class="font-mono">Designed & Coded by <span class="text-sky-400">Victor Hugo</span> &copy; 2024</p>
+
+    <!-- Spotify Widget -->
+    <div class="fixed bottom-6 right-6 z-[1000] p-2 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4BgS8ML?utm_source=generator&theme=0" width="300" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>
+    </div>
+
+    <!-- Chatbot FAB & Window -->
+    <div id="chat-fab" class="fixed bottom-6 left-6 w-14 h-14 bg-white text-black rounded-full flex items-center justify-center z-[1000] shadow-2xl transition-transform hover:scale-110">
+        <i class="fas fa-robot text-2xl"></i>
+    </div>
+    <div id="chat-window" class="fixed bottom-24 left-6 w-80 h-96 z-[1000]">
+        <div class="chat-header justify-between">
+            <div class="flex items-center gap-2">
+                <div class="status-dot"></div>
+                <span class="font-bold">Victor AI</span>
+            </div>
+            <button id="close-chat" class="text-gray-400 hover:text-white">&times;</button>
         </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="msg msg-bot">Olá! Sou o assistente virtual do Victor Hugo. 🤖<br><br>Ele é um <strong>Desenvolvedor de Alta Performance</strong> focado em criar experiências digitais fluidas. Como posso guiar você pelo portfólio hoje?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Sua pergunta..." class="w-full">
+            <button id="send-chat" class="bg-white text-black px-3 py-1 rounded-lg text-sm font-bold">Enviar</button>
+        </div>
+    </div>
+
+    <!-- CLI Overlay -->
+    <div id="cli-overlay">
+        <div id="cli-history" class="mb-4"></div>
+        <div class="cli-input-container">
+            <span class="text-green-500">victor@portfolio:~$</span>
+            <input type="text" id="cli-input" autofocus>
+        </div>
+    </div>
+
+    <footer class="py-12 border-t border-white/10 text-center text-gray-500 text-xs">
+        <p>&copy; 2024 Victor Hugo. Desenvolvido com minimalismo.</p>
     </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" integrity="sha384-..." crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-..." crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha384-..." crossorigin="anonymous" defer></script>
+    <!-- Security Module - Protocolo ZERO BALA -->
+    <script src="security.js" defer></script>
     <script>
-        AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
+        // SOUND DESIGN
+        const hoverSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3');
+        const clickSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+        hoverSound.volume = 0.1;
+        clickSound.volume = 0.2;
+
+        document.querySelectorAll('a, button, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                hoverSound.currentTime = 0;
+                hoverSound.play().catch(() => {});
+            });
+            el.addEventListener('mousedown', () => {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(() => {});
+            });
+        });
+
+        // Custom Cursor
         const dot = document.getElementById('cursor-dot');
         const outline = document.getElementById('cursor-outline');
         window.addEventListener('mousemove', (e) => {
@@ -189,25 +594,200 @@
                 outline.style.top = e.clientY + 'px';
             });
         });
-        const texts = ["Full Stack Developer in Training", "GTI Student @ FATEC", "React & TypeScript Enthusiast", "Cloudflare Specialist"];
-        let count = 0, index = 0, currentText = "", letter = "";
-        (function type() {
-            if (count === texts.length) { count = 0; }
-            currentText = texts[count];
-            let timer = setInterval(() => {
-                if (index < currentText.length) {
-                    document.getElementById("typewriter").innerHTML += currentText.charAt(index);
-                    index++;
-                    setTimeout(type, 100);
+        document.querySelectorAll('a, button, .project-card').forEach(el => {
+            el.addEventListener('mouseover', () => outline.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
+        });
+
+        // Magnetic Buttons
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            btn.addEventListener('mouseleave', () => btn.style.transform = `translate(0, 0)`);
+        });
+
+        // Typewriter
+        const typewriter = document.getElementById('typewriter');
+        const words = ['Desenvolvedor Full Stack', 'Entusiasta de UI/UX', 'Solucionador de Problemas', 'GTI @ FATEC'];
+        let wordIdx = 0, charIdx = 0, isDeleting = false;
+        function type() {
+            const currentWord = words[wordIdx];
+            if (isDeleting) {
+                typewriter.textContent = currentWord.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typewriter.textContent = currentWord.substring(0, charIdx + 1);
+                charIdx++;
+            }
+            if (!isDeleting && charIdx === currentWord.length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                wordIdx = (wordIdx + 1) % words.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+        type();
+
+        // 3D Tilt
+        VanillaTilt.init(document.querySelectorAll('.project-card'), {
+            max: 10, speed: 400, glare: true, "max-glare": 0.2,
+        });
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+
+        // Spotlight Effect
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        // Terminal Logic
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalOutput = document.getElementById('terminal-output');
+        terminalInput.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                const cmd = terminalInput.value.toLowerCase().trim();
+                if (cmd === 'whoami') terminalOutput.innerHTML = '<span class="text-green-400">Victor Hugo - Dev de Elite</span>';
+                else if (cmd === 'clear') terminalOutput.innerHTML = 'Digite \'whoami\' para saber mais...';
+                else terminalOutput.innerHTML = `<span class="text-red-500">Command not found: ${cmd}</span>`;
+                terminalInput.value = '';
+            }
+        });
+
+        // CLI Mode
+        const cliToggle = document.getElementById('cli-toggle');
+        const cliOverlay = document.getElementById('cli-overlay');
+        const cliInput = document.getElementById('cli-input');
+        const cliHistory = document.getElementById('cli-history');
+
+        cliToggle.addEventListener('click', () => {
+            cliOverlay.style.display = 'block';
+            setTimeout(() => cliInput.focus(), 100);
+        });
+
+        cliInput.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                const cmd = cliInput.value.toLowerCase().trim();
+                const line = document.createElement('div');
+                line.className = 'cli-line';
+                line.innerHTML = `<span class="text-green-500">victor@portfolio:~$</span> ${cliInput.value}`;
+                cliHistory.appendChild(line);
+
+                const res = document.createElement('div');
+                res.className = 'cli-line ml-4 text-gray-300';
+                if (cmd === 'help') res.innerText = 'Available: help, skills, projects, exit';
+                else if (cmd === 'skills') res.innerText = 'React, TypeScript, Node.js, Cloudflare, TailwindCSS';
+                else if (cmd === 'projects') res.innerText = 'Sistema de Agendamento, Currículo Inteligente, Portfolio Produto';
+                else if (cmd === 'exit') {
+                    cliOverlay.style.display = 'none';
+                    res.innerText = 'Exiting CLI mode...';
                 } else {
-                    clearInterval(timer);
-                    setTimeout(() => {
-                        document.getElementById("typewriter").innerHTML = "";
-                        index = 0; count++; type();
-                    }, 2000);
+                    res.innerText = 'Unknown command. Type "help" for list.';
                 }
-            }, 100);
-        })();
+                cliHistory.appendChild(res);
+                cliInput.value = '';
+                cliOverlay.scrollTop = cliOverlay.scrollHeight;
+                if (cmd === 'exit') setTimeout(() => cliOverlay.style.display = 'none', 500);
+            }
+        });
+
+        // PREMIUM CHATBOT
+        const chatFab = document.getElementById('chat-fab');
+        const chatWin = document.getElementById('chat-window');
+        const closeChat = document.getElementById('close-chat');
+        const sendChat = document.getElementById('send-chat');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+
+        chatFab.addEventListener('click', () => chatWin.style.display = chatWin.style.display === 'flex' ? 'none' : 'flex');
+        closeChat.addEventListener('click', () => chatWin.style.display = 'none');
+
+        function addMsg(text, type) {
+            const div = document.createElement('div');
+            div.className = `msg ${type === 'bot' ? 'msg-bot' : 'msg-user'}`;
+            div.innerHTML = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            const div = document.createElement('div');
+            div.id = 'typing-indicator';
+            div.className = 'msg msg-bot typing';
+            div.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div;
+        }
+
+        async function handleChat() {
+            const val = chatInput.value.trim();
+            if (!val) return;
+            addMsg(val, 'user');
+            chatInput.value = '';
+
+            const indicator = showTyping();
+
+            setTimeout(() => {
+                indicator.remove();
+                const input = val.toLowerCase();
+                if (/oi|olá|bom dia/.test(input)) {
+                    addMsg('Olá! Sou o assistente virtual do Victor Hugo. 🤖<br><br>Ele é um <strong>Desenvolvedor de Alta Performance</strong> focado em criar experiências digitais fluidas (como este site que você está navegando). Como posso guiar você pelo portfólio hoje?', 'bot');
+                } else if (/projetos|github|repositórios|portfolio/.test(input)) {
+                    addMsg('O Victor constrói interfaces e sistemas escaláveis. 🚀<br><br>A especialidade dele inclui arquitetura moderna com <strong>React, TypeScript e Tailwind</strong>. Você pode explorar os projetos na seção \'Bento Grid\' da página, ou dar uma olhada no código-fonte real acessando o <a href="https://github.com/hashickzvictorhugo" target="_blank" class="text-sky-400 underline">GitHub Oficial dele</a>. Quer que eu te conte sobre as tecnologias?', 'bot');
+                } else if (/tecnologias|skills|stack|linguagens/.test(input)) {
+                    addMsg('O ecossistema que ele domina é bem robusto: 💻<br><br>• <strong>Front-end:</strong> React, Next.js, TailwindCSS e animações fluidas (AOS, Spline).<br>• <strong>Back-end & Cloud:</strong> Node.js, integrações de APIs REST e Cloudflare.<br><br>Ele não foca apenas em escrever código, mas em <em>engenharia de software</em> com foco em UI/UX e performance.', 'bot');
+                } else if (/contato|email|whatsapp|contratar/.test(input)) {
+                    addMsg('Excelente! O Victor está sempre aberto a conexões estratégicas e novos desafios. 🤝<br><br>A forma mais rápida de falar com ele é pelo <strong><a href="https://wa.me/5518988242732" target="_blank" class="text-green-400 underline">WhatsApp</a></strong>. Se preferir algo mais formal, você pode enviar uma mensagem pelo <strong><a href="https://linkedin.com/in/hashickzvictorhugo" target="_blank" class="text-blue-400 underline">LinkedIn</a></strong>. Posso te ajudar com mais alguma coisa?', 'bot');
+                } else {
+                    addMsg('Confesso que essa pergunta fugiu do meu escopo atual. 😅<br><br>Sou treinado para falar especificamente sobre as <strong>Habilidades</strong>, os <strong>Projetos</strong> ou os <strong>Contatos</strong> do Victor. Sobre qual desses tópicos você gostaria de saber mais?', 'bot');
+                }
+            }, 1000 + Math.random() * 1000);
+        }
+
+        sendChat.addEventListener('click', handleChat);
+        chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') handleChat(); });
+
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
     </script>
 </body>
 </html>
