@@ -56,5 +56,5 @@ Desenvolvido por Victor Hugo
 Técnico em Administração & Estudante de Gestão da TI. Apaixonado por criar sistemas organizados, música e soluções digitais criativas.
 
 GitHub: @hashickzvictorhugo
-Vercel:https://meu-portfolio-produto-jmp08vtyz-hashickzvictorhugos-projects.vercel.app/
+Vercel:https://meu-portfolio-produto.vercel.app/
 
