@@ -41,3 +41,20 @@ Se quiser clonar o repositório e testar o ambiente no seu PC (Windows/Linux/Mac
 1. **Clone o repositório:**
    ```bash
    git clone [https://github.com/hashickzvictorhugo/meu-portfolio-produto.git](https://github.com/hashickzvictorhugo/meu-portfolio-produto.git)
+Acesse a pasta do projeto:
+
+Bash
+cd meu-portfolio-produto
+Execute o projeto:
+Como é uma aplicação baseada em tecnologias front-end nativas, basta abrir o arquivo index.html no seu navegador ou utilizar a extensão Live Server no VS Code.
+
+Deploy
+O projeto está no ar e hospedado na Vercel. Você pode acessar a versão mais recente e interagir com o terminal e o chatbot através do link:Acessar Portfólio (Nota: atualize com sua URL exata da Vercel)
+
+Autor
+Desenvolvido por Victor Hugo
+Técnico em Administração & Estudante de Gestão da TI. Apaixonado por criar sistemas organizados, música e soluções digitais criativas.
+
+GitHub: @hashickzvictorhugo
+
+Contato: Sinta-se à vontade para interagir com o chatbot no portfólio ou abrir uma issue neste repositório.
